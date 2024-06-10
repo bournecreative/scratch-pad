@@ -1,5 +1,5 @@
 export const setEditor = (el) => {
-    
+    console.log(el)
     const setPointCurrent = el.querySelector('.setPoint') // number
     const editBtn = el.querySelector('.setPoint-edit') // Edit button
 
