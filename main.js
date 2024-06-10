@@ -1,6 +1,7 @@
 
 import "./style.css"
-import {setEditor} from './components/editor'
+import { setEditor } from './components/editor'
+import { promiseCallBack } from "./components/promiseCallBack"
 
 document.querySelector('#app').innerHTML = `
   <div class='setPoint-group'>
@@ -32,4 +33,17 @@ document.querySelectorAll('.setPoint-group').forEach((group) => {
   setEditor(group)
 })
 
-// setupCounter(document.querySelector('#counter'))
+promiseCallBack("Yub Yub")
+.then((data) => console.log(data))
+.catch((data) => console.log(data))
+
+const alternate = async () => {
+  try {
+    const response = await promiseCallBack("More Yub Yub")
+    console.log(response)
+  }
+  catch (err) {
+    console.log(err)
+  }
+}
+alternate()
