@@ -1,0 +1,19 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.setPoint {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.setPoint-edit {
+    border-width: 2px;
+}
+
+.setPoint-edit:hover {
+  background-color: deepskyblue;
+  border-width: 2px;
+}
