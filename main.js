@@ -2,6 +2,7 @@
 import "./style.css"
 import { setEditor } from './components/editor'
 import { promiseCallBack } from "./components/promiseCallBack"
+import { counter } from "./components/counter"
 
 document.querySelector('#app').innerHTML = `
   <div class='setPoint-group'>
@@ -20,13 +21,18 @@ document.querySelector('#app').innerHTML = `
       <button class='setPoint-cancel'>cancel</button>
     </div>
   </div>
-   <div class='setPoint-group'>
+  <div class='setPoint-group'>
     <div class='setPoint'>75</div><button class="setPoint-edit">Edit</button>
     <div class='setPoint-edit-group' style="display: none">
       <input type='number' min="60" max="100" maxlength="3" class='setPoint-editor-input'/>
       <button class='setPoint-confirm'>confirm</button>
       <button class='setPoint-cancel'>cancel</button>
     </div>
+  </div>
+  <div class='counter'>
+    Count: <span class='current'>0</span>
+    <button class='increment'>+</button>
+    <button class='decrement'>-</button>
   </div>
 `
 document.querySelectorAll('.setPoint-group').forEach((group) => {
@@ -46,4 +52,7 @@ const alternate = async () => {
     console.log(err)
   }
 }
+
 alternate()
+
+counter(document.querySelector('.counter'))
